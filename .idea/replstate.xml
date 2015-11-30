@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ReplState" timestamp="1448899721613">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="ReplState" timestamp="1448899789088">{:repl-history {:ide [], :local [&quot;(-create-deck)&quot; &quot;(rank-names)&quot; &quot;(get rank-names)&quot; &quot;rank-names&quot; &quot;(create-deck)&quot; &quot;(create-hands)&quot; &quot;(= [1 2 3] [3 2 1])&quot; &quot;(=# {1 2 3} #{3 2 1})&quot; &quot;(count (create-hands (create-deck)))&quot; &quot;(def hand-1 #{{:suit :clubs\n               :rank 2}\n              {:suit :clubs\n               :rank 3}\n              {:suit :clubs\n               :rank :queen}\n              {:suit :clubs\n               :rank :king}\n              })\n&quot; &quot;hand-1&quot; &quot;(map :suit hand-1)&quot; &quot;(apply = (map :suit hand-1))&quot; &quot;(flush? hand-1)&quot; &quot;(-main)&quot;], :remote []}}</component>
 </project>

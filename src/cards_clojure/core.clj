@@ -30,10 +30,10 @@
   )
 
 (defn -main [& args]
-  (let [deck (create-deck)
-        hands (create-hands deck)
-        hands (filter flush? hands)
-        ]
-    (println (count hands))
-    )
+  (time (let [deck (create-deck)
+              hands (create-hands deck)
+              hands (filter flush? hands)
+              ]
+          (println (count hands))
+          ))
   )
