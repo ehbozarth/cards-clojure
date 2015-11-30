@@ -25,9 +25,40 @@
      #{c1 c2 c3 c4}))                                       ;make it a hash set to avoid duplicate hands/sets
   )
 
+
+(defn most-popular-numbers [hand]
+  (sort >
+        (map second
+             (frequencies
+               (map second hand))))
+  )
+
+(defn n-of-a-kind? [n hand]
+  (= n (first (most-popular-numbers hand)))
+  )
+
 (defn flush? [hand]
   (= 1 (count (set (map :suit hand))))                      ;Checks to see if all cards in hand have same suit
   )
+
+(defn straight?
+  [hand]
+  (let [[min-value :as sorted] (sort (map :rank hand))]
+    (= sorted
+       (take 4
+             (iterate inc min-value)))))
+
+(defn straight-flush? [hand]
+  (and (straight? hand) (flush? hand))
+  )
+
+(defn two-pair? [hand]
+  (= '(2 2)
+     (take 2
+           (most-popular-numbers hand)))
+  )
+
+
 
 (defn -main [& args]
   (time (let [deck (create-deck)
@@ -37,3 +68,5 @@
           (println (count hands))
           ))
   )
+
+;helpful code is provided by https://gist.github.com/benstopford/7667590
