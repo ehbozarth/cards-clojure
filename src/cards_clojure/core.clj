@@ -27,7 +27,14 @@
 
 
 (defn most-popular-numbers [hand]
-  (sort >
+  (let [ranks (map :rank hand)
+        freq (frequencies ranks)
+        ranks (sort (fn [n1 n2]
+                      (> (second n1) (second n2)))
+                    ranks)
+        ranks (map first ranks)]
+    ranks)
+  #_(sort >
         (map second
              (frequencies
                (map second hand))))
@@ -64,6 +71,7 @@
   (time (let [deck (create-deck)
               hands (create-hands deck)
               hands (filter flush? hands)
+
               ]
           (println (count hands))
           ))
